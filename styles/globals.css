@@ -1,0 +1,136 @@
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-3: #000000;
+  --clr-4: #000000;
+  --clr-5: #000000;
+  --clr-6: #00bafe;
+}
+
+.glow_card::before,
+.glow_card::after {
+  content: '';
+  position: absolute;
+  inset: -0.05rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-6),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: 0.6rem;
+  animation: rotation 10s linear infinite;
+}
+
+.glow_card::after {
+  filter: blur(0.8rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+@import 'react-circular-progressbar/dist/styles.css';
+.type-animation-cursor::after {
+  content: '_';
+  animation: cursor 1.1s infinite step-start;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+.edrea_tm_modalbox {
+  top: -70px;
+}
+@media (max-width: 1040px) {
+  .edrea_tm_content {
+    z-index: 99;
+  }
+}
+.edrea_tm_button .a {
+  text-transform: none;
+  font-weight: unset;
+  text-decoration: none;
+  letter-spacing: none;
+  height: unset;
+  padding: 15px 40px;
+}
+
+.edrea_tm_mobile_menu,
+.edrea_tm_settings {
+  z-index: 999;
+}
+svg.CircularProgressbar {
+  width: 110px;
+  height: 110px;
+}
+.CircularProgressbar .CircularProgressbar-text {
+  fill: unset !important;
+  font-size: unset;
+}
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #eb4a4c;
+}
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #a2a2a2;
+  stroke-linecap: round;
+}
+.testimonial {
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .waves canvas {
+    bottom: -34px;
+    position: fixed;
+  }
+}
+
+/* image popup */
+img.mfp-img {
+  box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+  position: absolute;
+  max-height: 392px;
+  padding: 0 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mfp-img-container .mfp-content {
+  max-width: 400px !important;
+}
+.mfp-img-container .mfp-close {
+  top: -110px;
+  right: -24px;
+}
+
+.edrea_tm_modalbox {
+  visibility: hidden;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 200;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
